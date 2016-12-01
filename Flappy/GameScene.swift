@@ -37,7 +37,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         /* Setup your scene here */
         
-        
         self.physicsWorld.contactDelegate = self
         
         gameStarted = false
@@ -47,7 +46,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addBackrnd()
         
     }// end didMoveToView
-    
     
     
     
@@ -61,7 +59,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         else{
             
         }
-        
         
         if !gameStarted{
             
@@ -78,7 +75,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let spawnSequence = SKAction.sequence([spawn, delay])
             let spawn4ever = SKAction.repeatForever(spawnSequence)
             self.run(spawn4ever)
-         
+            
         }
         
         for touch in touches{
@@ -90,8 +87,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-     }
-    
+    }
     
     
     
@@ -108,7 +104,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ground.physicsBody?.isDynamic = false
         ground.zPosition = 5
         self.addChild(ground)
-
+        
     }
     
     
@@ -142,7 +138,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLine.physicsBody?.categoryBitMask = physicsCategories.scoreLine
         scoreLine.physicsBody?.collisionBitMask = 0
         scoreLine.physicsBody?.contactTestBitMask = physicsCategories.ghost
-       // scoreLine.color = SKColor.cyanColor()
+        // scoreLine.color = SKColor.cyanColor()
         
         wallPair = SKNode()
         wallPair.name = "WallPair"
@@ -202,7 +198,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLbl.color = SKColor.cyan
         scoreLbl.zPosition = 2
         self.addChild(scoreLbl)
-
+        
     }
     
     
@@ -271,7 +267,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     
-    
     // MARK: SKPhysicsContactDelegate
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -280,14 +275,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let bodyB = contact.bodyB
         
         if bodyA.categoryBitMask == physicsCategories.ghost && bodyB.categoryBitMask == physicsCategories.scoreLine
-        || bodyA.categoryBitMask == physicsCategories.scoreLine && bodyB.categoryBitMask == physicsCategories.ghost{
+            || bodyA.categoryBitMask == physicsCategories.scoreLine && bodyB.categoryBitMask == physicsCategories.ghost{
             
             score += 1
             scoreLbl.text = "\(score)"
         }
         
         if bodyA.categoryBitMask == physicsCategories.ghost && bodyB.categoryBitMask == physicsCategories.wall
-        || bodyA.categoryBitMask == physicsCategories.wall && bodyB.categoryBitMask == physicsCategories.ghost{
+            || bodyA.categoryBitMask == physicsCategories.wall && bodyB.categoryBitMask == physicsCategories.ghost{
             
             
             enumerateChildNodes(withName: "WallPair", using: ({
@@ -305,7 +300,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }// end if
         
-       
+        
         
         
         
