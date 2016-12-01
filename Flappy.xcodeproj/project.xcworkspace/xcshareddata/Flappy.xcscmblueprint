@@ -1,0 +1,13 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C2B4A166A7DC3DCFB88A6B3C1BA30C00EE77163B" : 9223372036854775807,
+    "BC079B0DE133D7FF5A1D9F2A43F45DCA45ABC4C3" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1C96D49D-8663-4D5C-B074-D9B2FB2B1265",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C2B4A166A7DC3DCFB88A6B3C1BA30C00EE77163B" : "Flappy\/",
+    "BC079B0DE133D7FF5A1D9F2A43F45DCA45ABC4C3" : "Flappy.xcodeproj\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : ".",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+}
